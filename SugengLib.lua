@@ -562,7 +562,6 @@ function SugengLib:CreateWindow(config)
 	local winTitle = config.Title or "Sugeng Hub"
 	local keySystem = (config.KeySystem == true)
 	local expectedKey = config.Key or "sugeng2026"
-	local toggleKey = resolveSavedKey("HideUI_Key", config.ToggleKey or Enum.KeyCode.RightControl)
 	local keyValidator = config.KeyValidator
 	local defaultTab = config.DefaultTab or "About"
 	local keybindPath = config.KeybindFile or "Sugeng_Keybinds.json"
@@ -620,6 +619,7 @@ function SugengLib:CreateWindow(config)
 	end
 
 	loadSavedKeybinds()
+	local toggleKey = resolveSavedKey("HideUI_Key", config.ToggleKey or Enum.KeyCode.RightControl)
 
 
 	-- Single instance
